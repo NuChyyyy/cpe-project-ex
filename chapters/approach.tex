@@ -2,96 +2,84 @@
 \ifenglish Project Structure and Methodology\else โครงสร้างและขั้นตอนการทำงาน\fi
 \else%
 \ifenglish Project Structure\else โครงสร้างของโครงงาน\fi
-\fi
-}
+\fi}
 
-ในบทนี้จะกล่าวถึงหลักการ และการออกแบบระบบ
+\qquad ในบทนี้จะกล่าวถึงเนื้อเรื่องของเกม, เกมเพลย์, วิธีการเล่นเกม เพื่อให้ผู้เล่นได้เข้าใจเป้าหมายและวิธีการเล่นของเกมนี้มากยิ่งขึ้น
 
-\makeatletter
+% \makeatletter
 
-% \renewcommand\section{\@startsection {section}{1}{\z@}%
-%                                    {13.5ex \@plus -1ex \@minus -.2ex}%
-%                                    {2.3ex \@plus.2ex}%
-%                                    {\normalfont\large\bfseries}}
+% % \renewcommand\section{\@startsection {section}{1}{\z@}%
+% %                                    {13.5ex \@plus -1ex \@minus -.2ex}%
+% %                                    {2.3ex \@plus.2ex}%
+% %                                    {\normalfont\large\bfseries}}
 
-\makeatother
-%\vspace{2ex}
-% \titleformat{\section}{\normalfont\bfseries}{\thesection}{1em}{}
-% \titlespacing*{\section}{0pt}{10ex}{0pt}
+% \makeatother
+% %\vspace{2ex}
+% % \titleformat{\section}{\normalfont\bfseries}{\thesection}{1em}{}
+% % \titlespacing*{\section}{0pt}{10ex}{0pt}
 
-\section{Alice in Wonderland}
+\section{เนื้อเรื่อง}
 
-\begin{figure}
-\begin{center}
-\includegraphics{800px-Briny_Beach.jpg}
-\end{center}
-\caption[Poem]{The Walrus and the Carpenter}
-\label{fig:walrus}
+\qquad เกมมีเนื้อเรื่องเกี่ยวกับ ในป่าแห่งหนึ่งที่มีสองเผ่าที่อาศัยอยู่ร่วมกัน คือเผ่า Doggy และเผ่า Kitty ในอดีตทั้งสองเผ่าอยู่ร่วมกันอย่างสันติ โดยที่แบ่งปันทรัพยากรซึ่งกันและกัน 
+แต่แล้วในทั้ง 2 เผ่า ก็เกิดมีผู้ไม่พอใจ อยากให้เผ่าตัวเองได้ทรัพยากรที่มากกว่า ไม่อยากแบ่งทรัพยากรให้อีกเผ่าได้ใช้ ทั้ง 2 เผ่าเริ่มแก่งแย่งทรัพยากรกันเกิดเป็นสงครามระหว่าง 2 เผ่าเรื่อยมา
+
+\section{Gameplay}
+
+\qquad ก่อนเริ่มเกมผู้เล่นจะสามารถสุ่มหรือเลือกเผ่าของตัวเองได้ เมื่อเริ่มเกมแล้วผู้เล่นจะถูกสุ่มตําแหน่งฐานหลักของตัวเอง 
+โดยที่ในเกมจะมีทรัพยากรเริ่มต้นให้ผู้เล่นคือ ฐานหลักที่ใช้สร้าง unit พื้นฐาน, unit พื้นฐาน, อาหาร (Food), ไม้ (Wood) 
+ที่สามารถนําไปใช้สร้าง unit และ building ได้
+
+\begin{figure}[h]
+  \includegraphics[width=\linewidth]{joingamePage.png}
+  \caption{หน้าเลือกเผ่าก่อนเริ่มเกม}
 \end{figure}
 
-\subsection{The Black Kitten}
-  One thing was certain, that the WHITE kitten had had nothing to
-do with it:---it was the black kitten's fault entirely~\cite{aiw}.  For the
-white kitten had been having its face washed by the old cat for
-the last quarter of an hour (and bearing it pretty well,
-considering); so you see that it COULDN'T have had any hand in
-the mischief.
+\begin{figure}[h]
+  \includegraphics[width=\linewidth]{resource.png}
+  \caption{Resource Bar}
+\end{figure}
 
-  The way Dinah washed her children's faces was this:  first she
-held the poor thing down by its ear with one paw, and then with
-the other paw she rubbed its face all over, the wrong way,
-beginning at the nose:  and just now, as I said, she was hard at
-work on the white kitten, which was lying quite still and trying
-to purr---no doubt feeling that it was all meant for its good.
+\enskip แต่ละเผ่าจะมีทรัพยากรพิเศษที่สามารถนําไปใช้ในการสร้าง Hero (unit พิเศษ) ได้ สําหรับเผ่า Doggy คือ กระดูก (Bone) ส่วนของเผ่า Kitty คือ ก้างปลา (Fishbone) ซึ่งทรัพยากรพิเศษทั้งสองนี้จะสุ่มวางตาม
+พื้นที่ต่างๆ
 
-  But the black kitten had been finished with earlier in the
-afternoon, and so, while Alice was sitting curled up in a corner
-of the great arm-chair, half talking to herself and half asleep,
-the kitten had been having a grand game of romps with the ball of
-worsted Alice had been trying to wind up, and had been rolling it
-up and down till it had all come undone again; and there it was,
-spread over the hearth-rug, all knots and tangles, with the
-kitten running after its own tail in the middle.
+\enskip ในการเล่นผู้เล่นจะต้องสร้าง unit พื้นฐานเพื่อใช้ในการเก็บรวบรวมทรัพยากร (Food, Wood, Bone/Fishbone)
+นํามาสร้างสิ่งก่อสร้างต่างๆซึ่งใช้ในการสร้าง unit ต่อสู้แต่ละแบบและอัญเชิญ Hero ของฝั่งตัวเอง 
+เพื่อที่ผู้เล่นจะได้ตั้งกองกําลังและนําไปบุกหรือตั้งรับฝั่งตรงข้าม
 
-\subsection{The Reproach}
+\enskip การสร้าง unit ของแต่ละฝั่งนั้นมีการสร้างได้จํานวนจํากัดผู้เล่นต้องทําการสร้างสิ่งก่อสร้าง 
+นั่นก็คือ บ้าน เพื่อที่จะขยาย capacity ซึ่งมี limit ของการขยายอยู่ด้วย
 
-  `Oh, you wicked little thing!' cried Alice, catching up the
-kitten, and giving it a little kiss to make it understand that it
-was in disgrace.  `Really, Dinah ought to have taught you better
-manners!  You OUGHT, Dinah, you know you ought!' she added,
-looking reproachfully at the old cat, and speaking in as cross a
-voice as she could manage---and then she scrambled back into the
-arm-chair, taking the kitten and the worsted with her, and began
-winding up the ball again.  But she didn't get on very fast, as
-she was talking all the time, sometimes to the kitten, and
-sometimes to herself.  Kitty sat very demurely on her knee,
-pretending to watch the progress of the winding, and now and then
-putting out one paw and gently touching the ball, as if it would
-be glad to help, if it might.
+\enskip เงื่อนไขในการชนะหรือแพ้ คือการที่ผู้เล่นฝั่งใดฝั่งหนึ่งสามารถทําลายฐานหลักของอีกฝั่งได้
 
-  `Do you know what to-morrow is, Kitty?' Alice began.  `You'd
-have guessed if you'd been up in the window with me---only Dinah
-was making you tidy, so you couldn't.  I was watching the boys
-getting in stick for the bonfire---and it wants plenty of
-sticks, Kitty!  Only it got so cold, and it snowed so, they had
-to leave off.  Never mind, Kitty, we'll go and see the bonfire
-to-morrow.'  Here Alice wound two or three turns of the worsted
-round the kitten's neck, just to see how it would look:  this led
-to a scramble, in which the ball rolled down upon the floor, and
-yards and yards of it got unwound again.
+\begin{figure}[ht]
+  \centerline{\includegraphics[scale=.7]{createBuilding.png}}
+  \caption{แสดงเมนูการสร้าง building ของ unit พื้นฐาน}
+\end{figure}
 
-  `Do you know, I was so angry, Kitty,' Alice went on as soon as
-they were comfortably settled again, `when I saw all the mischief
-you had been doing, I was very nearly opening the window, and
-putting you out into the snow!  And you'd have deserved it, you
-little mischievous darling!  What have you got to say for
-yourself?  Now don't interrupt me!' she went on, holding up one
-finger.  `I'm going to tell you all your faults.  Number one:
-you squeaked twice while Dinah was washing your face this
-morning.  Now you can't deny it, Kitty:  I heard you!  What that
-you say?' (pretending that the kitten was speaking.)  `Her paw
-went into your eye?  Well, that's YOUR fault, for keeping your
-eyes open---if you'd shut them tight up, it wouldn't have
-happened.  Now don't make any more excuses, but listen!  Number
-two:  you pulled Snowdrop away by the tail just as I had put down
-the saucer of milk before her!  What, you were thirsty, were you?
+\begin{figure}[h]
+  \centerline{\includegraphics[scale=.6]{result.png}}
+  \caption{แสดผลชนะ/แพ้ เมื่อทำลาย/ถูกทำลายฐานหลัก}
+\end{figure}
+\subsection{ระบบภายในเกม}
+
+\begin{itemize}
+  \item ระบบการสร้าง unit
+  
+  \qquad ในฐานหลักนั้นจะมีระบบการสร้างตัว unit พื้นฐานที่สามารถนําไปเก็บรวบรวมทรัพยากรได้ 
+  และมีสิ่งก่อสร้างอื่นที่สามารถสร้าง unit ประเภทอื่นได้ เช่น Barrack สำหรับการสร้าง unit ต่อสู้
+  \item ระบบสร้างสิ่งก่อสร้าง (building)
+  
+  \qquad ในการสร้างสิ่งก่อสร้าง จะให้ผู้เล่นใช้ตัว unit พื้นฐานในการสร้างสิ่งก่อสร้าง ซึ่งสิ่งก่อสร้างบางชนิดจะมีเงื่อนไขที่ต้องสร้างสิ่งก่อสร้างบางประเภทก่อนถึงจะทําการสร้างสิ่งก่อสร้างนั้นได้
+  \item ระบบการต่อสู้
+  
+  \qquad ผู้เล่นสามารถทําการควบคุม unit ต่อสู้ / Hero เพื่อนําไปต่อสู้กับฝั่งตรงข้าม
+  \item ระบบ Fog of War
+  
+  \qquad ใน map จะมีระบบซ่อนข้อมูลบนแผนที่ (Fog of War) ซึ่งทําให้ผู้เล่นต้องทําการสํารวจเพื่อเปิดเผยพื้นที่
+  \item ระบบอัพเกรด unit
+  
+  \qquad ในเกมจะมีสิ่งก่อสร้างที่สามารถอัพเกรดตัว unit ต่อสู้ได้
+  \item ระบบการขยาย capacity
+  
+  \qquad ผู้เล่นต้องทําการสร้างก่อสร้าง “บ้าน” เพื่อเพิ่มความจุในการสร้าง unit โดยรวมได้
+\end{itemize}

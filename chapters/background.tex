@@ -1,128 +1,160 @@
 \chapter{\ifenglish Background Knowledge and Theory\else ทฤษฎีที่เกี่ยวข้อง\fi}
 
-การทำโครงงาน เริ่มต้นด้วยการศึกษาค้นคว้า ทฤษฎีที่เกี่ยวข้อง หรือ งานวิจัย/โครงงาน ที่เคยมีผู้นำเสนอไว้แล้ว ซึ่งเนื้อหาในบทนี้ก็จะเกี่ยวกับการอธิบายถึงสิ่งที่เกี่ยวข้องกับโครงงาน เพื่อให้ผู้อ่านเข้าใจเนื้อหาในบทถัดๆ ไปได้ง่ายขึ้น
+\quad การจัดทําโครงงานพัฒนาเกมนี้ ซึ่งเป็นเกม RTS ที่ควบคุมการเล่นผ่านทางแป้นพิมพ์ และเมาส์ เบื้องต้นในการพัฒนาโปรแกรมนั้นได้ศึกษาค้นคว้าเกี่ยวกับ Game engine ที่ใช้ในการพัฒนาเกม 
+และศึกษาเกี่ยวกับประเภทของเกม เนื้อหาในบทนี้จะอธิบายส่วนต่างๆที่เกี่ยวข้องกับโครงงาน เพื่อเพิ่มความเข้าใจในบทถัดไปได้ง่ายมากยิ่งขึ้น
 
-\section{The first section}
-The text for Section 1 goes here.
+\section{Unity (game engine)}
 
-\section{Second section}
-Section 2 text.
+\qquad Unity คือซอฟต์แวร์สําหรับใช้เพื่อสําหรับการพัฒนาซอฟต์แวร์และการจําลองต่างๆ เป็นโปรแกรมที่มีความสามารถหลากหลาย ได้แก่ การสร้างเกม 2 มิติ, 3 มิติ การสร้าง AR, VR 
+สามารถส่งแอพพลิเคชั่นได้ทั้งระบบ Windows, iOS และ Android
 
-\subsection{Subsection heading goes here}
+\enskip ในการเขียนโปรแกรมเกมนั้น Unity สามารถเขียนด้วยภาษา C++ ได้ แต่ยังไงก็ตามผู้พัฒนาสามารถเขียนภาษา C++ ได้แค่ในส่วนการทํางานพื้นหลังเท่านั้น เช่น ระบบเสียง, บริการพื้นหลัง, ปลั๊กอิน ซึ่งการ
+ปฏิสัมพันธ์กับ Engine ทําได้ค่อนข้างน้อย ดังนั้นภาษา C\# จึงเหมาะสมสําหรับกับการใช้ในการพัฒนามากกว่า
 
-Subsection 1 text
 
-\subsubsection{Subsubsection 1 heading goes here}
-Subsubsection 1 text
+\section{เกมกลยุทธ์}
+\subsection{เกมกลยุทธ์แบบเรียลไทม์ (Real-Time Strategy : RTS)}
 
-\subsubsection{Subsubsection 2 heading goes here}
-Subsubsection 2 text
+\qquad เป็นประเภทย่อยของวิดีโอเกมกลยุทธ์ (Strategy game) เกมกลยุทธ์แบบเรียลไทม์ช่วยให้ผู้เล่นทุกคนสามารถเล่นเกมแบบ “Real-time” ได้พร้อมกัน
 
-\section{Third section}
-Section 3 text. The dielectric constant\index{dielectric constant}
-at the air-metal interface determines
-the resonance shift\index{resonance shift} as absorption or capture occurs
-is shown in Equation~\eqref{eq:dielectric}:
+\enskip เป็นเกมที่มุ่งเน้นไปที่การใช้ทรัพยากรเพื่อสร้าง unit และเอาชนะคู่ต่อสู้ เกมกลยุทธ์แบบเรียลไทม์มักจะถูกเปรียบเทียบกับเกมวางแผนแบบ turn based ซึ่งผู้เล่นแต่ละคนมีเวลาพิจารณาอย่างรอบคอบในการเคลื่อนที่ครั้งต่อไปโดยไม่ต้องกังวลเกี่ยวกับการกระทําของฝ่ายตรงข้าม 
+แต่ในเกมกลยุทธ์แบบเรียลไทม์ผู้เล่นจะต้องพยายามปกป้องฐานและเริ่มการโจมตีในขณะที่รู้ว่าฝ่ายตรงข้ามกําลังต่อสู้เพื่อทําสิ่งเดียวกัน
 
-\begin{equation}\label{eq:dielectric}
-k_1=\frac{\omega}{c({1/\varepsilon_m + 1/\varepsilon_i})^{1/2}}=k_2=\frac{\omega
-\sin(\theta)\varepsilon_\mathit{air}^{1/2}}{c}
-\end{equation}
+\subsection{การเล่นเกม}
 
-\noindent
-where $\omega$ is the frequency of the plasmon, $c$ is the speed of
-light, $\varepsilon_m$ is the dielectric constant of the metal,
-$\varepsilon_i$ is the dielectric constant of neighboring insulator,
-and $\varepsilon_\mathit{air}$ is the dielectric constant of air.
+\qquad ในเกมกลยุทธ์แบบเรียลไทม์ทั่วไปหน้าจอจะแบ่งออกเป็นพื้นที่แผนที่ที่แสดงโลกของเกม, ภูมิประเทศและสิ่งปลูกสร้าง ผู้เล่นมักจะได้เล่นในมุมมองจากที่สูง 
+ควบคุมโดยการเลื่อนหน้าจอและออกคําสั่งด้วยเมาส์และอาจใช้แป้นพิมพ์ลัด (short key)
 
-\section{About using figures in your report}
+\enskip การเล่นเกมโดยทั่วไปประกอบด้วยผู้เล่นที่อยู่ในตําแหน่งใดที่หนึ่งในแผนที่โดยมี unit ไม่กี่ unit หรือ building ที่สามารถสร้าง unit / building อื่นได้ 
+โดยมักจะให้ผู้เล่นสร้างสิ่งก่อสร้างที่เฉพาะเจาะจงเพื่อปลดล็อค unit ในขั้นที่สูงขึ้น เกม RTS ต้องการให้ผู้เล่นสร้างกองทัพ 
+(ตั้งแต่ unit เล็ก ๆ ไม่เกิน 2 unit ไปจนถึง unit หลายร้อย unit) ใช้เพื่อป้องกันตัวเองจากการโจมตีของศัตรูหรือกําจัดศัตรูที่ครอบครองฐานที่มีกําลังการผลิต unit เป็นของตัวเอง 
+ในบางครั้งเกม RTS จะมีจํานวน unit ที่กําหนดไว้ล่วงหน้าเพื่อให้ผู้เล่นควบคุมและไม่อนุญาตให้สร้าง unit เพิ่มเติมเกินจากที่กําหนดไว้
+
+% \section{Third section}
+% Section 3 text. The dielectric constant\index{dielectric constant}
+% at the air-metal interface determines
+% the resonance shift\index{resonance shift} as absorption or capture occurs
+% is shown in Equation~\eqref{eq:dielectric}:
+
+% \begin{equation}\label{eq:dielectric}
+% k_1=\frac{\omega}{c({1/\varepsilon_m + 1/\varepsilon_i})^{1/2}}=k_2=\frac{\omega
+% \sin(\theta)\varepsilon_\mathit{air}^{1/2}}{c}
+% \end{equation}
+
+% \noindent
+% where $\omega$ is the frequency of the plasmon, $c$ is the speed of
+% light, $\varepsilon_m$ is the dielectric constant of the metal,
+% $\varepsilon_i$ is the dielectric constant of neighboring insulator,
+% and $\varepsilon_\mathit{air}$ is the dielectric constant of air.
+
+% \section{About using figures in your report}
 
 % define a command that produces some filler text, the lorem ipsum.
-\newcommand{\loremipsum}{
-  \textit{Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-  minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-  aliquip ex ea commodo consequat. Duis aute irure dolor in
-  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-  culpa qui officia deserunt mollit anim id est laborum.}\par}
+% \newcommand{\loremipsum}{
+%   \textit{Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+%   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+%   minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+%   aliquip ex ea commodo consequat. Duis aute irure dolor in
+%   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+%   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+%   culpa qui officia deserunt mollit anim id est laborum.}\par}
 
-\begin{figure}
-  \centering
+% \begin{figure}
+%   \centering
 
-  \fbox{
-     \parbox{.6\textwidth}{\loremipsum}
-  }
+%   \fbox{
+%      \parbox{.6\textwidth}{\loremipsum}
+%   }
 
-  % To include an image in the figure, say myimage.pdf, you could use
-  % the following code. Look up the documentation for the package
-  % graphicx for more information.
-  % \includegraphics[width=\textwidth]{myimage}
+%   % To include an image in the figure, say myimage.pdf, you could use
+%   % the following code. Look up the documentation for the package
+%   % graphicx for more information.
+%   % \includegraphics[width=\textwidth]{myimage}
 
-  \caption[Sample figure]{This figure is a sample containing \gls{lorem ipsum},
-  showing you how you can include figures and glossary in your report.
-  You can specify a shorter caption that will appear in the List of Figures.}
-  \label{fig:sample-figure}
-\end{figure}
+%   \caption[Sample figure]{This figure is a sample containing \gls{lorem ipsum},
+%   showing you how you can include figures and glossary in your report.
+%   You can specify a shorter caption that will appear in the List of Figures.}
+%   \label{fig:sample-figure}
+% \end{figure}
 
-Using \verb.\label. and \verb.\ref. commands allows us to refer to
-figures easily. If we can refer to Figures
-\ref{fig:walrus} and \ref{fig:sample-figure} by name in the {\LaTeX}
-source code, then we will not need to update the code that refers to it
-even if the placement or ordering of the figures changes.
+% Using \verb.\label. and \verb.\ref. commands allows us to refer to
+% figures easily. If we can refer to Figures
+% \ref{fig:walrus} and \ref{fig:sample-figure} by name in the {\LaTeX}
+% source code, then we will not need to update the code that refers to it
+% even if the placement or ordering of the figures changes.
 
-\loremipsum\loremipsum
+% \loremipsum\loremipsum
 
 % This code demonstrates how to get a landscape table or figure. It
 % uses the package lscape to turn everything but the page number into
 % landscape orientation. Everything should be included within an
 % \afterpage{ .... } to avoid causing a page break too early.
-\afterpage{
-  \begin{landscape}
-  \begin{table}
-    \caption{Sample landscape table}
-    \label{tab:sample-table}
+% \afterpage{
+%   \begin{landscape}
+%   \begin{table}
+%     \caption{Sample landscape table}
+%     \label{tab:sample-table}
 
-    \centering
+%     \centering
 
-    \begin{tabular}{c||c|c}
-        Year & A & B \\
-        \hline\hline
-        1989 & 12 & 23 \\
-        1990 & 4 & 9 \\
-        1991 & 3 & 6 \\
-    \end{tabular}
-  \end{table}
-  \end{landscape}
-}
+%     \begin{tabular}{c||c|c}
+%         Year & A & B \\
+%         \hline\hline
+%         1989 & 12 & 23 \\
+%         1990 & 4 & 9 \\
+%         1991 & 3 & 6 \\
+%     \end{tabular}
+%   \end{table}
+%   \end{landscape}
+% }
 
-\loremipsum\loremipsum\loremipsum
+% \loremipsum\loremipsum\loremipsum
 
-\section{Overfull hbox}
+% \section{Overfull hbox}
 
-When the \verb.semifinal. option is passed to the \verb.cpecmu. document class,
-any line that is longer than the line width, i.e., an overfull hbox, will be
-highlighted with a black solid rule:
-\begin{center}
-\begin{minipage}{2em}
-juxtaposition
-\end{minipage}
-\end{center}
+% When the \verb.semifinal. option is passed to the \verb.cpecmu. document class,
+% any line that is longer than the line width, i.e., an overfull hbox, will be
+% highlighted with a black solid rule:
+% \begin{center}
+% \begin{minipage}{2em}
+% juxtaposition
+% \end{minipage}
+% \end{center}
 
 \section{\ifenglish%
 \ifcpe CPE \else ISNE \fi knowledge used, applied, or integrated in this project
 \else%
-ความรู้ตามหลักสูตรซึ่งถูกนำมาใช้หรือบูรณาการในโครงงาน
-\fi
-}
+ความรู้ตามหลักสูตรซึ่งถูกนำมาใช้หรือบูรณาการในโครงงาน\fi}
 
-อธิบายถึงความรู้ และแนวทางการนำความรู้ต่างๆ ที่ได้เรียนตามหลักสูตร ซึ่งถูกนำมาใช้ในโครงงาน
+\qquad ในการจัดทำโครงงานนี้ มีหลายหัวข้อที่ผู้พัฒนานั้นยังไม่มีความชำนาญ และยังขาดประสบการณ์ 
+จึงได้นำความรู้ที่ได้รับจากการเรียนการสอนตามหลักสูตรของวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยเชียงใหม่มาใช้ ดังนี้
+\begin{enumerate}
+  \item Object-Oriented Programming (OOP)
+  
+  \qquad ใช้ช่วยในการพัฒนาโปรแกรม,การเขียนโปรแกรมเชิงวัตถุ ทำให้ object ต่างๆภายในเกมสามารถทำงานได้อย่างถูกต้องและมีประสิทธิภาพ
+  \item Algorithms
+  
+  \qquad ช่วยกำหนดทิศทางและเป้าหมายในพัฒนาโปรแกรม วางแผนแก้ไขปัญหาอย่างเป็นขั้นตอน
+  \item Software Engineering
+  
+  \qquad ช่วยทำให้การพัฒนาซอฟต์แวร์เกิดขึ้นอย่างเป็นระบบ
+  \item Human-computer interaction (HCI) 
+  
+  \qquad ช่วยในการออกแบบโปรแกรม เพื่อสนับสนุนประสบการณ์การใช้งานของผู้ใช้ (user eperience)
+\end{enumerate}
 
 \section{\ifenglish%
 Extracurricular knowledge used, applied, or integrated in this project
 \else%
-ความรู้นอกหลักสูตรซึ่งถูกนำมาใช้หรือบูรณาการในโครงงาน
-\fi
-}
+ความรู้นอกหลักสูตรซึ่งถูกนำมาใช้หรือบูรณาการในโครงงาน\fi}
 
-อธิบายถึงความรู้ต่างๆ ที่เรียนรู้ด้วยตนเอง และแนวทางการนำความรู้เหล่านั้นมาใช้ในโครงงาน
+\qquad ในการจัดทำโครงงานนี้ นอกเหนือจากความรู้ตามหลักสูตรของทางมหาวิทยาลัย ผู้พัฒนายังได้ไปศึกษาเนื้อหานอกหลักสูตรเพื่อนำมาใช้ในการพัฒนาโปรแกรม ดังนี้
+
+\begin{enumerate}
+  \item MDA framework 
+  
+  \qquad ช่วยในการออกแบบเกม เพื่อให้ผู้เล่นเกิดความสนุกไปกับเกม
+  \item การพัฒนาเกมด้วย Unity engine
+  
+  \qquad เพื่อช่วยอำนวยความสะดวกให้กับการพัฒนาเกม
+\end{enumerate}
